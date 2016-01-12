@@ -29,6 +29,15 @@ def getNext(password):
 
 
 
+def hasNoBadChar(password):
+    return False
+
+def hasTwoPairs(password):
+    return False
+
+def hasSeries(password):
+    return False
+
 # Grâce à ce fragment de code, si vous exécutez ce fichier, les tests doctests seront exécutés également. 
 # Si vous ne voulez plus que les tests s'exécutent, commentez les deux lignes ci-dessous. 
 # Si vous préférez lancer vos tests à la main, commentez également les lignes, et utilisez "python -m doctest pass.py" en console. 
