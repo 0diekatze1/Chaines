@@ -1,10 +1,10 @@
-Poulalier Rémy
-Laube Félix
+Poulalier Remy
+Laube Felix
 
 DASI 1
 
 
 Bugs:
-*chaîne vide: ''
-*chaîne avec uniquement des z, par ex: 'zz'
-*chaîne invalide: 'zera1'
+*chaine vide: ''
+*chaine avec uniquement des z, par ex: 'zz'
+*chaine invalide: 'zera1'
