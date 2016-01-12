@@ -5,10 +5,16 @@ import password as pwd
 class TestPassword(unittest.TestCase):
 
     def test_getNextNormal(self):
-        self.assertEqual(pwd.getNext("abcd"), "abce")
+        self.assertEqual(pwd.getNext("aabbcdg"), "aabbcdh")
 
-    def test_getNextEndLine(self):
-        self.assertEqual(pwd.getNext("abhz"), "abia")
+    def test_getNextBadChar(self):
+        self.assertEqual(pwd.getNext("aabbcdh"), "aabbcdj")
+        
+    def test_getNextTwoPairs(self):
+        self.assertEqual(pwd.getNext("abcaabb"), "abcaacc")
+
+    def test_getNextSeries(self):
+        self.assertEqual(pwd.getNext("abbaaaba"), "abbaaabc")
 
     def test_getNextEndList(self):
         self.assertRaises(ValueError, pwd.getNext, "zzzz")

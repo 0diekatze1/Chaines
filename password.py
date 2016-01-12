@@ -23,9 +23,13 @@ def getNext(password):
             i = i-1
             if(i==-1):
                 raise ValueError("Limite de mots de passes atteinte.")
-		   
-    
-    return ''.join(pwd) #3 il renvoie le nouveau mot de passe en concaténant tous les caractères (en insérant une chaine vide entre chacun)
+
+    nouveau = ''.join(pwd)
+
+    if (hasNoBadChar(nouveau) and hasTwoPairs(nouveau) and hasSeries(nouveau)):
+        return nouveau #3 il renvoie le nouveau mot de passe en concaténant tous les caractères (en insérant une chaine vide entre chacun)
+    else:
+        return getNext(nouveau)
 
 
 
@@ -48,7 +52,7 @@ def hasTwoPairs(password):
     if (i<3):
         return False
     
-    while (i >= 0):
+    while (i > 0):
         if(pwd[i] == pwd[i-1]):
             countpairs += 1
             i -= 2
