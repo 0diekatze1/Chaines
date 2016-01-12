@@ -3,8 +3,12 @@ Laube Felix
 
 DASI 1
 
-
+Partie 1:
 Bugs:
 *chaine vide: ''
 *chaine avec uniquement des z, par ex: 'zz'
 *chaine invalide: 'zera1'
+
+Partie 2:
+1 seul mot de passe peut être genere avec une chaine de caracteres valide de longueur n
+Sinon de 1 à 26^n iterations possibles. 

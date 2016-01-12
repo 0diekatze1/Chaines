@@ -8,10 +8,6 @@ def getNext(password):
     'ba'
     >>> getNext('bc')
     'bd'
-    >>> getNext('')
-    'a'
-    >>> getNext('zz')
-    'aaa'
     """
     pwd = list(password)  #1 Création d'une liste des caractères du mot de passe
     found = False
@@ -25,6 +21,8 @@ def getNext(password):
         else:
             pwd[i] = 'a'
             i = i-1
+            if(i==-1):
+                raise ValueError("Limite de mots de passes atteinte.")
 		   
     
     return ''.join(pwd) #3 il renvoie le nouveau mot de passe en concaténant tous les caractères (en insérant une chaine vide entre chacun)
