@@ -30,12 +30,44 @@ def getNext(password):
 
 
 def hasNoBadChar(password):
-    return False
+
+    pwd = list(password)  
+
+    for i in pwd:
+        if i in 'iol':
+            return False
+        
+    return True
 
 def hasTwoPairs(password):
-    return False
+
+    pwd = list(password) 
+    i=len(pwd)-1
+    countpairs = 0
+
+    if (i<3):
+        return False
+    
+    while (i >= 0):
+        if(pwd[i] == pwd[i-1]):
+            countpairs += 1
+            i -= 2
+        else:
+            i -= 1
+    
+    return (countpairs >= 2)
 
 def hasSeries(password):
+
+    pwd = list(password) 
+    i=len(pwd)-1
+
+    while (i >= 0):
+        if(pwd[i] == chr(ord(pwd[i-1])+1) and pwd[i] == chr(ord(pwd[i-2])+2)):
+            return True
+        else:
+            i -= 1
+
     return False
 
 # Grâce à ce fragment de code, si vous exécutez ce fichier, les tests doctests seront exécutés également. 
